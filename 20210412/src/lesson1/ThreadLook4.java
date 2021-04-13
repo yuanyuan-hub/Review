@@ -9,7 +9,7 @@ public class ThreadLook4 {
                 public void run() {
                     for (int j = 0; j < 10000; j++) {
                         if(j == 9999) {
-                            System.out.println(i);
+                            System.out.println(j);
                         }
                     }
                 }
