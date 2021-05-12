@@ -1,34 +1,57 @@
 public class Rectangle {
-    private float width,height;
+    private double height;
+    private double width;
     private String color;
-    public Rectangle(float width, float height, String color) {
-        this.width = width;
-        this.height = height;
-        this.color = color;
+    public double getHeight() {
+        return height;
     }
-    public float getWidth() {
+    public void setHeight(double height) {
+        this.height = height;
+    }
+    public double getWidth() {
         return width;
+    }
+    public void setWidth(double width) {
+        this.width = width;
+    }
+    public String getColor() {
+        return color;
     }
     public void setColor(String color) {
         this.color = color;
     }
-
-    public  float getArea(float width, float height) {
-        float area = 0;
-        area = width*height;
-        return area;
+    public Rectangle(double width,double height,String color){
+        this.setColor(color);
+        this.setHeight(height);
+        this.setWidth(width);
     }
-    public  float getLength(float width, float height) {
-        float length = 0;
-        length = 2 *(width+height);
-        return length;
+    public void getArea(){
+        double area=0;
+        area=this.height*this.width;
+        System.out.println("矩形的面积为:"+area);
+    }
+
+    private void getLength() {
+        double length = 0;
+        length = (height + width) * 2;
+        System.out.println("矩阵的周长为："+length);
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "height=" + height +
+                ", width=" + width +
+                ", color='" + color + '\'' +
+                '}';
     }
 
     public static void main(String[] args) {
-        Rectangle rectangle = new Rectangle(5,8,"red");
-        System.out.println(rectangle.getWidth());
-        rectangle.setColor("blue");
-        System.out.println(rectangle.getArea(5,4));
-        System.out.println(rectangle.getLength(2,6));
+        Rectangle rec=new Rectangle(3, 4, "红色");
+        rec.getArea();
+        rec.getLength();
+        System.out.println(rec.toString());
     }
+
+
 }
